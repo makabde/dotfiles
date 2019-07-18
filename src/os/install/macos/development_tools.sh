@@ -15,6 +15,5 @@ print_in_purple "\n   Development IDE\n\n"
 
 brew_install "Dash" "dash" "caskroom/cask" "cask"
 brew_install "iTerm 2" "iterm2" "caskroom/cask" "cask"
+brew_install "Postgres.app" "postgres" "caskroom/cask" "cask"
 brew_install "Visual Studio Code" "visual-studio-code" "caskroom/cask" "cask"
-
-
