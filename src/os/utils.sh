@@ -161,8 +161,10 @@ is_git_repository() {
 
 is_supported_version() {
 
-    declare -a v1=("${1//./ }")
-    declare -a v2=("${2//./ }")
+    # shellcheck disable=2206
+    declare -a v1=(${1//./ })
+    # shellcheck disable=2206
+    declare -a v2=(${2//./ })
     local i=""
 
     # Fill empty positions in v1 with zeros.
