@@ -45,9 +45,9 @@ terminal:
 (:warning: **DO NOT** run the `setup` snippet if you do not fully
 understand [what it does][setup]. Seriously, **DON'T**!)
 
-| OS      | Snippet                                                                               |
-| :------ | :------------------------------------------------------------------------------------ |
-| `macOS` | `bash -c "$(curl -LsS https://raw.github.com/alrra/dotfiles/master/src/os/setup.sh)"` |
+| OS      | Snippet                                                                                 |
+| :------ | :-------------------------------------------------------------------------------------- |
+| `macOS` | `bash -c "$(curl -LsS https://raw.github.com/makabde/dotfiles/master/src/os/setup.sh)"` |
 
 That's it! :sparkles:
 
