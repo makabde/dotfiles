@@ -5,6 +5,65 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+asdf_install_language() {
+
+    declare -r LANGUAGE="$1"
+    local version
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check if `ASDF` is installed.
+
+    if ! cmd_exists "asdf"; then
+        print_error "$LANGUAGE ('ASDF' is not installed)"
+        return 1
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    version="$(asdf list-all "$LANGUAGE" | grep -v "[a-z]" | tail -1)"
+
+    if ! asdf list "$LANGUAGE" | grep -Fq "$version"; then
+        execute \
+            "asdf install $LANGUAGE $version \
+                && asdf global $LANGUAGE $version" \
+            "ASDF (Install $LANGUAGE $version)"
+    fi
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+asdf_install_or_update_plugin() {
+
+    declare -r NAME="$1"
+    declare -r URL="$2"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # Check if `ASDF` is installed.
+
+    if ! cmd_exists "asdf"; then
+        print_error "$NAME ('ASDF' is not installed)"
+        return 1
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    if ! asdf plugin-list | grep -Fq "$NAME"; then
+        execute \
+            "asdf plugin-add $NAME $URL" \
+            "ASDF (Add plugin $NAME)"
+    else
+        execute \
+            "asdf plugin-update $NAME" \
+            "ASDF (Update plugin $NAME)"
+    fi
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 brew_install() {
 
     declare -r CMD="$4"
