@@ -1,23 +1,41 @@
-# [Cătălin](https://github.com/alrra)’s dotfiles
+# [Makabde](https://github.com/makabde)’s dotfiles
 
 These are the base dotfiles that I start with when I set up a
 new environment. For more specific local needs I use the `.local`
 files described in the [`Local Settings`](#local-settings) section.
 
+This repository is a fork from [Cătălin Mariș](https://github.com/alrra)'s
+[dotfiles](https://github.com/alrra/dotfiles). It is customized to meet
+my needs & preferences.
+Major customization include (but are not limited to):
+* Use of [VimPlug](https://github.com/junegunn/vim-plug) instead of
+  [minpac](https://github.com/k-takata/minpac).
+* Application installed with Homebrew are totally changed
+  * Design tools
+  * Development tools
+  * PGP use [GPG Tools](https://gpgtools.org/) instead of GPG &
+    Pinentry-Mac
+  * Mackup for synching application preferences via iCloud
+  * ~~Removed totally the ubuntu installer as I have no use of Ubuntu in
+  my daily practice.~~
+  * etc.
+
 ## Table of Contents
 
-* [🔧 Setup](#setup)
-* [💄 Customize](#customize)
-  * [🔀 Forks](#forks)
-  * [🌐 Local Settings](#local-settings)
-    * [🐚 `~/.bash.local`](#bashlocal)
-    * [🔁 `~/.gitconfig.local`](#gitconfiglocal)
-    * [⌨️  `~/.vimrc.local`](#vimrclocal)
-* [↕️  Update](#update)
-* [📸 Screenshots](#screenshots)
-  * [🔁 `git`](#git)
-  * [⌨️  `tmux` & `vim`](#tmux--vim)
-* [📄 License](#license)
+- [Makabde’s dotfiles](#Makabdes-dotfiles)
+  - [Table of Contents](#Table-of-Contents)
+  - [Setup](#Setup)
+  - [Customize](#Customize)
+    - [Local Settings](#Local-Settings)
+      - [`~/.bash.local`](#bashlocal)
+      - [`~/.gitconfig.local`](#gitconfiglocal)
+      - [`~/.vimrc.local`](#vimrclocal)
+    - [Forks](#Forks)
+  - [Update](#Update)
+  - [Screenshots](#Screenshots)
+    - [Git](#Git)
+    - [tmux & vim](#tmux--vim)
+  - [License](#License)
 
 ## Setup
 
@@ -27,10 +45,9 @@ terminal:
 (:warning: **DO NOT** run the `setup` snippet if you do not fully
 understand [what it does][setup]. Seriously, **DON'T**!)
 
-| OS | Snippet |
-|:---|:---|
+| OS      | Snippet                                                                               |
+| :------ | :------------------------------------------------------------------------------------ |
 | `macOS` | `bash -c "$(curl -LsS https://raw.github.com/alrra/dotfiles/master/src/os/setup.sh)"` |
-| `Ubuntu` | `bash -c "$(wget -qO - https://raw.github.com/alrra/dotfiles/master/src/os/setup.sh)"` |
 
 That's it! :sparkles:
 
@@ -45,11 +62,9 @@ The setup process will:
   [`vim`](src/vim) files
 * Install applications / command-line tools for
   [`macOS`](src/os/install/macos) /
-  [`Ubuntu`](src/os/install/ubuntu)
 * Set custom
   [`macOS`](src/os/preferences/macos) /
-  [`Ubuntu`](src/os/preferences/ubuntu) preferences
-* Install [`vim` plugins](src/vim/vim/plugins)
+* Install [`vim` plugins](src/vim/vim/vimrc.bundles)
 
 Setup process in action:
 
@@ -59,13 +74,9 @@ Setup process in action:
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/19314446/cd89a592-90a2-11e6-948d-9d75247088ba.gif" alt="Setup process on Ubuntu" width="100%">
             </td>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/19048636/e23e347a-89af-11e6-853c-98616b75b6ae.gif" alt="Setup process on Ubuntu" width="100%">
-            </td>
         </tr>
         <tr align="center">
             <td>macOS</td>
-            <td>Ubuntu</td>
         </td>
     </tbody>
 </table>
@@ -125,8 +136,8 @@ such as the `git` user credentials, e.g.:
 
 [user]
 
-    name = Cătălin Mariș
-    email = alrra@example.com
+    name = Mak Abdennabi
+    email = makabde@example.com
     signingkey = XXXXXXXX
 ```
 
@@ -160,13 +171,9 @@ Output for `git status`:
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/10561038/f9f11a28-7525-11e5-8e1d-a304ad3557f9.png" alt="Output for Git status on macOS" width="100%">
             </td>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/8397636/3708d218-1ddb-11e5-9d40-21c6871271b9.png" alt="Output for Git status on Ubuntu" width="100%">
-            </td>
         </tr>
         <tr align="center">
             <td>macOS</td>
-            <td>Ubuntu</td>
         </td>
     </tbody>
 </table>
@@ -179,13 +186,9 @@ Output for `git log`:
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/10560966/e4ec08a6-7523-11e5-8941-4e12f6550a63.png" alt="Output for Git status on macOS" width="100%">
             </td>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10560955/4b5e1300-7523-11e5-9e96-95ea67de9474.png" alt="Output for Git log on Ubuntu" width="100%">
-            </td>
         </tr>
         <tr align="center">
             <td>macOS</td>
-            <td>Ubuntu</td>
         </td>
     </tbody>
 </table>
@@ -198,13 +201,9 @@ Output for `git log`:
             <td>
                 <img src="https://cloud.githubusercontent.com/assets/1223565/10561007/498e1212-7525-11e5-8252-81503b3d6184.png" alt="tmux and vim on macOS" width="100%">
             </td>
-            <td>
-                <img src="https://cloud.githubusercontent.com/assets/1223565/10560956/557ca2de-7523-11e5-9000-fc1e189a95f5.png" alt="tmux and vim on Ubuntu" width="100%">
-            </td>
         </tr>
         <tr align="center">
             <td>macOS</td>
-            <td>Ubuntu</td>
         </td>
     </tbody>
 </table>
