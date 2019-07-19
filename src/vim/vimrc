@@ -373,105 +373,105 @@ let mapleader = " "
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,* ] Search and replace the word under the cursor.
+" [<leader>* ] Search and replace the word under the cursor.
 
 nmap <leader>* :%s/\<<C-r><C-w>\>//<Left>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,cc] Toggle code comments.
+" [<leader>cc] Toggle code comments.
 " https://github.com/tomtom/tcomment_vim
 
 map <leader>cc :TComment<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,cr] Calculate result.
+" [<leader>cr] Calculate result.
 " http://vimcasts.org/e/56
 
 nmap <leader>cr 0yt=A<C-r>=<C-r>"<CR><Esc>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,cs] Clear search.
+" [<leader>cs] Clear search.
 
 map <leader>cs <Esc>:noh<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,gd] Toggle Git differences.
+" [<leader>gd] Toggle Git differences.
 
 map <leader>gd :SignifyToggle<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,l ] Toggle `set list`.
+" [<leader>l ] Toggle `set list`.
 
 nmap <leader>l :set list!<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,n ] Toggle `set relativenumber`.
+" [<leader>n ] Toggle `set relativenumber`.
 
 nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,rl ] Toggle `RainbowLevels`.
+" [<leader>rl ] Toggle `RainbowLevels`.
 
 map <leader>rl :RainbowLevelsToggle<cr>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,sh] Show hex dump.
+" [<leader>sh] Show hex dump.
 
 nmap <leader>sh :%!xxd<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,sr] Strip carriage returns.
+" [<leader>sr] Strip carriage returns.
 
 nmap <leader>sr :%s/\r//g<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,ss] Strip trailing whitespace.
+" [<leader>ss] Strip trailing whitespace.
 
 nmap <leader>ss :call StripTrailingWhitespaces()<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,n ] Toggle NERDTree.
+" [<leader>n ] Toggle NERDTree.
 
 map <leader>t :NERDTreeToggle<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,ti] Toggle indent.
+" [<leader>ti] Toggle indent.
 
 nmap <leader>ti <Plug>IndentGuidesToggle
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,tl] Toggle show limits.
+" [<leader>tl] Toggle show limits.
 
 nmap <leader>tl :call ToggleLimits()<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,ts] Toggle Syntastic.
+" [<leader>ts] Toggle Syntastic.
 
 nmap <leader>ts :SyntasticToggleMode \| w<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,v ] Make the opening of the `.vimrc` file easier.
+" [<leader>v ] Make the opening of the `.vimrc` file easier.
 
 nmap <leader>v :vsp $MYVIMRC<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,W ] Sudo write.
+" [<leader>W ] Sudo write.
 
 map <leader>W :w !sudo tee %<CR>
 
