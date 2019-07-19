@@ -162,103 +162,9 @@ endif
 " Use `vim-plug` to manage the Vim plugins.
 " https://github.com/junegunn/vim-plug
 
-" ----------------------------------------------------------------------
-" | Plugins - Emmet                                                    |
-" ----------------------------------------------------------------------
-
-" Redefine trigger key for Emmet.
-" http://docs.emmet.io/cheat-sheet/
-
-let g:user_emmet_leader_key="<C-E>"
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" Load custom Emmet snippets.
-" http://docs.emmet.io/customization/snippets/
-
-if exists('webapi#json')
-    let g:user_emmet_settings = webapi#json#decode(join(readfile(expand("~/.vim/snippets/emmet.json")), "\n"))
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
 endif
-
-
-" ----------------------------------------------------------------------
-" | Plugins - Indent Guides                                            |
-" ----------------------------------------------------------------------
-
-" Set custom indent colors.
-" https://github.com/nathanaelkane/vim-indent-guides#setting-custom-indent-colors
-
-let g:indent_guides_auto_colors = 0
-
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd
-        \ guibg=#00323D
-        \ ctermbg=Magenta
-
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven
-        \ guibg=#073642
-        \ ctermbg=DarkMagenta
-
-
-" ----------------------------------------------------------------------
-" | Plugins - Markdown                                                 |
-" ----------------------------------------------------------------------
-
-" Disable Folding.
-" https://github.com/plasticboy/vim-markdown#disable-folding
-
-let g:vim_markdown_folding_disabled=1
-
-
-" ----------------------------------------------------------------------
-" | Plugins - NeoComplCache                                            |
-" ----------------------------------------------------------------------
-
-" Enable `neocomplcache` by default.
-" https://github.com/Shougo/neocomplcache.vim#installation
-
-" let g:neocomplcache_enable_at_startup=1
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" Make `Tab` autocomplete.
-
-" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" Make `Shift+Tab` insert `Tab` character.
-
-" inoremap <S-TAB> <C-V><TAB>
-
-" ----------------------------------------------------------------------
-" | Plugins - Signify                                                  |
-" ----------------------------------------------------------------------
-
-" Disable Signify by default.
-" https://github.com/mhinz/vim-signify
-
-let g:signify_disable_by_default=1
-
-
-" ----------------------------------------------------------------------
-" | Plugins - Syntastic                                                |
-" ----------------------------------------------------------------------
-
-" Inform Syntastic which checkers to use based on file types.
-" https://github.com/scrooloose/syntastic#faq
-
-let g:syntastic_javascript_checkers = [ 'eslint' ]
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" Disable syntax checking by default.
-
-let g:syntastic_mode_map = {
-    \ "active_filetypes": [],
-    \ "mode": "passive",
-    \ "passive_filetypes": []
-\}
-
 
 " ----------------------------------------------------------------------
 " | Helper Functions                                                   |
@@ -523,9 +429,9 @@ nmap <leader>ss :call StripTrailingWhitespaces()<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-" [,t ] Toggle NERDTree.
+" [,n ] Toggle NERDTree.
 
-map <leader>t :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
