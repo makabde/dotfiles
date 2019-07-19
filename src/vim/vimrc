@@ -4,7 +4,12 @@
 
 set nocompatible                    " Don't make Vim vi-compatibile.
 
-syntax on                           " Enable syntax highlighting.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+    syntax on                       " Enable syntax highlighting, when
+                                    " the terminal has colors.
+                                    " Also switch on the last used search
+                                    " patterns.
+endif
 
 if has('autocmd')
     filetype plugin indent on
