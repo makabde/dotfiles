@@ -398,6 +398,12 @@ nmap <leader>l :set list!<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+" [<leader>n ] Toggle NERDTree.
+
+map <leader>n :NERDTreeToggle<CR>
+
+" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 " [<leader>rl ] Toggle `RainbowLevels`.
 
 map <leader>rl :RainbowLevelsToggle<cr>
@@ -419,12 +425,6 @@ nmap <leader>sr :%s/\r//g<CR>
 " [<leader>ss] Strip trailing whitespace.
 
 nmap <leader>ss :call StripTrailingWhitespaces()<CR>
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" [<leader>n ] Toggle NERDTree.
-
-map <leader>t :NERDTreeToggle<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
