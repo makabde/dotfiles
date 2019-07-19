@@ -91,6 +91,8 @@ if has('linebreak')
                                     " columns used for the `line number`.
 endif
 
+set relativenumber                  " Use relative line number by default.
+
 set report=0                        " Report the number of lines changed.
 
 if has('cmdline_info')
