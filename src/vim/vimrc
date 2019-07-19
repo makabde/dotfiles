@@ -133,9 +133,9 @@ if has('syntax')
                                     " when files contain long lines).
 endif
 
-set tabstop=4                       " ┐
-set softtabstop=4                   " │ Set global <TAB> settings.
-set shiftwidth=4                    " │
+set tabstop=2                       " ┐
+set shiftwidth=2                    " │ Set global <TAB> settings to
+set shiftround                      " │ softtabs, 2 spaces.
 set expandtab                       " ┘
 
 set ttyfast                         " Enable fast terminal connection.
