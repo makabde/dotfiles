@@ -241,19 +241,6 @@ function! ToggleLimits()
 
 endfunction
 
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-function! ToggleRelativeLineNumbers()
-
-    if ( &relativenumber == 1 )
-        set number
-    else
-        set relativenumber
-    endif
-
-endfunction
-
-
 " ----------------------------------------------------------------------
 " | Automatic Commands                                                 |
 " ----------------------------------------------------------------------
@@ -408,12 +395,6 @@ map <leader>gd :SignifyToggle<CR>
 " [<leader>l ] Toggle `set list`.
 
 nmap <leader>l :set list!<CR>
-
-" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-" [<leader>n ] Toggle `set relativenumber`.
-
-nmap <leader>n :call ToggleRelativeLineNumbers()<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
