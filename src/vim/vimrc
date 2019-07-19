@@ -72,9 +72,9 @@ set lazyredraw                      " Do not redraw the screen while
                                     " and other commands that have
                                     " not been typed.
 
-set listchars=tab:▸\                " ┐
-set listchars+=trail:·              " │ Use custom symbols to
-set listchars+=eol:↴                " │ represent invisible characters.
+set list                            " ┐
+set listchars=tab:▸\                " | Use custom symbols to display
+set listchars+=trail:·              " │ extra whitespace
 set listchars+=nbsp:_               " ┘
 
 set magic                           " Enable extended regexp.
