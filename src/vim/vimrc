@@ -83,7 +83,7 @@ set nojoinspaces                    " When using the join command,
 set nomodeline                      " Disable for security reasons.
                                     " https://github.com/numirias/security/blob/cf4f74e0c6c6e4bbd6b59823aa1b85fa913e26eb/doc/2019-06-04_ace-vim-neovim.md#readme
 
-set nostartofline                   " Kept the cursor on the same column.
+set nostartofline                    " Kept the cursor on the same column.
 set number                          " Show line number.
 
 if has('linebreak')
@@ -165,6 +165,16 @@ endif
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
+
+" ----------------------------------------------------------------------
+" | Plugins - NERDTree                                                 |
+" ----------------------------------------------------------------------
+
+" Open a NERDTree automatically when vim starts up on a directory
+" https://github.com/scrooloose/nerdtree#faq
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
 
 " ----------------------------------------------------------------------
 " | Helper Functions                                                   |
@@ -431,7 +441,7 @@ nmap <leader>ss :call StripTrailingWhitespaces()<CR>
 
 " [,n ] Toggle NERDTree.
 
-map <leader>n :NERDTreeToggle<CR>
+map <leader>t :NERDTreeToggle<CR>
 
 " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
