@@ -91,6 +91,9 @@ set nomodeline                      " Disable for security reasons.
 set nostartofline                    " Kept the cursor on the same column.
 set number                          " Show line number.
 
+set number relativenumber           " ┐ Show hybrid line number.
+set nu rnu                          " ┘
+
 if has('linebreak')
     set numberwidth=5               " Increase the minimal number of
                                     " columns used for the `line number`.
