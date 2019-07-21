@@ -13,4 +13,6 @@ brew_install "Mackup" "mackup"
 print_in_purple "\n   Productivity IDE\n\n"
 
 brew_install "Alfred" "alfred" "caskroom/cask" "cask"
+brew_install "AppCleaner" "appcleaner" "caskroom/cask" "cask"
 brew_install "Bartender" "bartender" "caskroom/cask" "cask"
+brew_install "NightOwl" "nightowl" "caskroom/cask" "cask"
