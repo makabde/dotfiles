@@ -27,6 +27,7 @@ create_symlinks() {
 
         "mackup/mackup.cfg"
 
+        "tmux/tmux"
         "tmux/tmux.conf"
 
         "vim/vim"
