@@ -21,6 +21,6 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 ./gpg.sh
 ./../npm.sh
 ./quick_look.sh
-./tmux.sh
+./../tmux.sh
 ./../vim.sh
 ./vpn.sh
